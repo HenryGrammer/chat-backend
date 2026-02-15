@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "start": "node dist/server.ts",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.93.3",
+    "@types/cors": "^2.8.19",
+    "@types/mysql": "^2.15.27",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "typescript": "^5.9.3"
+  }
+}
