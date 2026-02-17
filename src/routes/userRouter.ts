@@ -19,6 +19,16 @@ userRouter.post(
     body("password")
         .notEmpty().withMessage("Password is required."),
 
+    body("password_confirm")
+        .notEmpty().withMessage("Password confirm is required.")
+        .custom((value, {req}) => {
+            if(value != req.body.password) {
+                throw new Error("Password confirmation does not match password")
+            }
+
+            return true
+        }),
+
     UserController.store
 )
 
