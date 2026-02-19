@@ -35,9 +35,9 @@ class UserModel {
         })
     }
 
-    static async ifUserExists(email: UserEmail): Promise<UserEmail[]> {
-        const query = "SELECT email FROM users WHERE email = ?"
-        const value = email
+    static async findOne(email: string): Promise<UserEmail[]>{
+        const query = "SELECT email, password, id FROM users WHERE email = ?"
+        const value = [email]
 
         return await new Promise((resolve, reject) => {
             databaseConnection.query(query, value, (err, res) => {

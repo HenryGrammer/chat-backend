@@ -31,6 +31,7 @@ userRouter.post(
 
     UserController.store
 )
+userRouter.post("/login", UserController.login)
 
 
 export default userRouter
