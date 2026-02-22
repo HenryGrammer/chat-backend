@@ -30,7 +30,7 @@ class AuthController {
 
                 res.cookie("token", token, {
                     httpOnly: true,
-                    secure: true,
+                    secure: false,
                     sameSite: "strict"
                 })
         
@@ -45,7 +45,7 @@ class AuthController {
         try {
             res.clearCookie("token", {
                 httpOnly: true,
-                secure: true,
+                secure: false,
                 sameSite: "strict"
             })
     
