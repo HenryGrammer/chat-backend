@@ -24,13 +24,13 @@ class AuthController {
                     return res.status(400).json({message: "Invalid password"})
                 }
         
-                const token = jwt.sign({id: user.id}, process.env.JWT_SECRET as string, {
+                const token = jwt.sign(req.body, process.env.JWT_SECRET as string, {
                     expiresIn: "1h"
                 })
 
                 res.cookie("token", token, {
                     httpOnly: true,
-                    secure: false,
+                    secure: true,
                     sameSite: "strict"
                 })
         
@@ -45,7 +45,7 @@ class AuthController {
         try {
             res.clearCookie("token", {
                 httpOnly: true,
-                secure: false,
+                secure: true,
                 sameSite: "strict"
             })
     
